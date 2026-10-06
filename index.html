@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Samuel & Sopran | OSIS FM2 2026/2027</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#07111f;
+    color:white;
+    line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(7,17,31,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-container{
+    max-width:1150px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:1px;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:5px;
+}
+
+.menu button{
+    border:0;
+    background:transparent;
+    color:#cbd5e1;
+    padding:9px 11px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu button:hover,
+.menu button.active{
+    background:#38bdf8;
+    color:#07111f;
+}
+
+/* ================= PAGE ================= */
+
+.page{
+    display:none;
+    min-height:calc(100vh - 70px);
+    animation:fade .35s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at 80% 20%,rgba(56,189,248,.15),transparent 30%),
+    radial-gradient(circle at 10% 80%,rgba(37,99,235,.12),transparent 30%),
+    #07111f;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.badge{
+    display:inline-block;
+    border:1px solid rgba(56,189,248,.4);
+    color:#7dd3fc;
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,90px);
+    line-height:.95;
+    letter-spacing:-3px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero h2{
+    font-size:clamp(20px,3vw,32px);
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#94a3b8;
+    max-width:700px;
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    padding:13px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#38bdf8;
+    color:#07111f;
+    border:1px solid #38bdf8;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(56,189,248,.2);
+}
+
+.btn-outline{
+    background:transparent;
+    color:white;
+    border:1px solid #38bdf8;
+}
+
+.btn-outline:hover{
+    background:rgba(56,189,248,.1);
+}
+
+/* ================= TITLES ================= */
+
+.section-title{
+    margin-bottom:40px;
+}
+
+.section-title small{
+    color:#38bdf8;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.section-title h2{
+    font-size:clamp(30px,5vw,48px);
+    margin-top:8px;
+}
+
+.section-title p{
+    color:#94a3b8;
+    max-width:700px;
+    margin-top:10px;
+}
+
+/* ================= CARD ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#0c1a2b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:27px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(56,189,248,.4);
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:21px;
+}
+
+.card p{
+    color:#94a3b8;
+}
+
+.number{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    background:rgba(56,189,248,.12);
+    color:#38bdf8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+/* ================= CANDIDATE ================= */
+
+.candidate{
+    text-align:center;
+}
+
+.avatar{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(135deg,#38bdf8,#2563eb);
+
+    font-size:30px;
+    font-weight:bold;
+}
+
+.position{
+    color:#38bdf8;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* ================= VISION ================= */
+
+.vision-box{
+    padding:35px;
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(56,189,248,.12),
+        rgba(37,99,235,.05)
+    );
+
+    border:1px solid rgba(56,189,248,.2);
+    margin-bottom:25px;
+}
+
+.vision-box p{
+    font-size:20px;
+    color:#e2e8f0;
+}
+
+.mission-list{
+    display:grid;
+    gap:15px;
+}
+
+.mission{
+    display:flex;
+    gap:15px;
+    padding:19px;
+
+    background:#0c1a2b;
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.mission strong{
+    color:#38bdf8;
+    min-width:30px;
+}
+
+/* ================= PROGRAM ================= */
+
+.program-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.program-number{
+    position:absolute;
+    right:15px;
+    top:-5px;
+
+    font-size:75px;
+    font-weight:bold;
+    color:rgba(56,189,248,.13);
+}
+
+.program-card h3,
+.program-card p,
+.program-card .subtitle,
+.program-card details{
+    position:relative;
+}
+
+.subtitle{
+    color:#38bdf8;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+details{
+    margin-top:20px;
+    padding-top:15px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+summary{
+    cursor:pointer;
+    font-weight:bold;
+}
+
+details p{
+    margin-top:12px;
+}
+
+/* ================= PROGRAM FLOW ================= */
+
+.flow{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.flow-card{
+    padding:25px;
+    text-align:center;
+
+    background:#0c1a2b;
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.flow-card strong{
+    display:block;
+    color:#38bdf8;
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+/* ================= PROCESS ================= */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.process-item{
+    background:#0c1a2b;
+    border-radius:15px;
+    padding:25px 15px;
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.process-item strong{
+    display:block;
+    color:#38bdf8;
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+/* ================= SCRIPT ================= */
+
+.script-intro{
+    padding:25px;
+    border-radius:16px;
+
+    background:#0c1a2b;
+
+    border-left:4px solid #38bdf8;
+
+    margin-bottom:30px;
+}
+
+.script-section{
+    margin-bottom:40px;
+}
+
+.script-section h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.dialogue{
+    background:#0c1a2b;
+    border:1px solid rgba(255,255,255,.07);
+
+    padding:20px;
+    border-radius:14px;
+
+    margin-bottom:12px;
+}
+
+.speaker{
+    display:block;
+    color:#38bdf8;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.dialogue p{
+    color:#cbd5e1;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    text-align:center;
+    padding:90px 20px;
+
+    background:
+    radial-gradient(circle,rgba(56,189,248,.15),transparent 55%),
+    #07111f;
+}
+
+.cta h2{
+    font-size:clamp(35px,6vw,60px);
+    margin-bottom:15px;
+}
+
+.cta p{
+    max-width:650px;
+    margin:0 auto 25px;
+    color:#94a3b8;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    background:#050c16;
+    color:#64748b;
+
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+footer strong{
+    color:#38bdf8;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    .nav-container{
+        flex-direction:column;
+    }
+
+    .menu{
+        justify-content:center;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .flow{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .container{
+        padding:50px 16px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="nav-container">
+
+<div class="logo">
+SAMUEL <span>&</span> SOPRAN
+</div>
+
+<div class="menu">
+
+<button class="active" onclick="showPage('home',this)">
+Home
+</button>
+
+<button onclick="showPage('tentang',this)">
+Tentang
+</button>
+
+<button onclick="showPage('visi',this)">
+Visi & Misi
+</button>
+
+<button onclick="showPage('program',this)">
+Program
+</button>
+
+<button onclick="showPage('cara',this)">
+Cara Kami
+</button>
+
+<button onclick="showPage('script',this)">
+Script Kami
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<span class="badge">
+CALON KETUA & WAKIL KETUA OSIS 2026/2027
+</span>
+
+<h1>
+DENGAR.<br>
+<span>GERAK.</span><br>
+BERDAMPAK.
+</h1>
+
+<h2>
+Samuel Jaya S. Sianipar & Sopran
+</h2>
+
+<p>
+Bukan sekadar program, tapi perubahan yang terasa.
+Kami ingin membangun OSIS yang dekat dengan siswa,
+terbuka terhadap aspirasi, dan mampu mengubah ide
+menjadi aksi nyata.
+</p>
+
+<div class="buttons">
+
+<button
+class="btn btn-primary"
+onclick="showPage('program')">
+Lihat Program
+</button>
+
+<button
+class="btn btn-outline"
+onclick="showPage('script')">
+Lihat Script Kampanye
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CTA HOME -->
+
+<div class="cta">
+
+<h2>
+Suara Kalian Penting.
+</h2>
+
+<p>
+OSIS bukan hanya tentang siapa yang memimpin.
+OSIS adalah tentang bagaimana kita bekerja bersama
+untuk membuat sekolah menjadi lebih baik.
+</p>
+
+<button
+class="btn btn-primary"
+onclick="showPage('visi')">
+Lihat Visi Kami
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= TENTANG ================= -->
+
+<section id="tentang" class="page">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>Tentang Kami</small>
+
+<h2>
+Kenali Kami
+</h2>
+
+<p>
+Dua siswa RPL dengan satu tujuan:
+membuat OSIS lebih dekat, terbuka, dan berdampak.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card candidate">
+
+<div class="avatar">
+SJ
+</div>
+
+<span class="position">
+Calon Ketua OSIS
+</span>
+
+<h3>
+Samuel Jaya S. Sianipar
+</h3>
+
+<p>
+Siap mendengar aspirasi siswa, menggerakkan ide
+menjadi tindakan, dan membangun OSIS yang
+bertanggung jawab.
+</p>
+
+</div>
+
+
+<div class="card candidate">
+
+<div class="avatar">
+SP
+</div>
+
+<span class="position">
+Calon Wakil Ketua OSIS
+</span>
+
+<h3>
+Sopran
+</h3>
+
+<p>
+Siap menjadi partner dalam menjalankan program,
+mendukung kerja OSIS, dan memastikan suara siswa
+tetap menjadi bagian dari setiap langkah.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="vision-box" style="margin-top:30px">
+
+<p>
+<strong>
+“Kalau ada masalah, jangan cuma dibicarakan.
+Cari solusinya, kerjakan, dan lihat hasilnya.”
+</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= VISI MISI ================= -->
+
+<section id="visi" class="page">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>Visi & Misi</small>
+
+<h2>
+Arah Perjuangan Kami
+</h2>
+
+<p>
+Visi adalah tujuan. Misi adalah langkah yang akan
+kami lakukan untuk mencapainya.
+</p>
+
+</div>
+
+
+<div class="vision-box">
+
+<p>
+“Mewujudkan OSIS SMK Free Methodist 2 sebagai
+organisasi yang dekat dengan siswa, terbuka terhadap
+aspirasi, dan mampu mengubah ide menjadi aksi nyata
+yang bermanfaat bagi seluruh warga sekolah.”
+</p>
+
+</div>
+
+
+<div class="section-title">
+
+<small>5 Misi</small>
+
+<h2>
+Apa yang Akan Kami Lakukan?
+</h2>
+
+</div>
+
+
+<div class="mission-list">
+
+
+<div class="mission">
+
+<strong>01</strong>
+
+<span>
+
+<b>Mendengar suara siswa secara terbuka.</b>
+
+<br>
+
+Menyediakan ruang bagi siswa untuk menyampaikan
+aspirasi, ide, kritik, saran, dan kebutuhan.
+
+</span>
+
+</div>
+
+
+<div class="mission">
+
+<strong>02</strong>
+
+<span>
+
+<b>Mengubah aspirasi menjadi tindakan.</b>
+
+<br>
+
+Mengolah masukan siswa menjadi program atau
+perbaikan yang realistis dan memungkinkan dilakukan.
+
+</span>
+
+</div>
+
+
+<div class="mission">
+
+<strong>03</strong>
+
+<span>
+
+<b>Menciptakan ruang untuk berkembang.</b>
+
+<br>
+
+Memberikan kesempatan bagi siswa untuk menunjukkan
+bakat, minat, kreativitas, kemampuan, dan karya.
+
+</span>
+
+</div>
+
+
+<div class="mission">
+
+<strong>04</strong>
+
+<span>
+
+<b>Membangun OSIS yang aktif, transparan,
+dan bertanggung jawab.</b>
+
+<br>
+
+Memberikan informasi yang jelas serta melakukan
+evaluasi terhadap kegiatan OSIS.
+
+</span>
+
+</div>
+
+
+<div class="mission">
+
+<strong>05</strong>
+
+<span>
+
+<b>Membangun program yang berkelanjutan.</b>
+
+<br>
+
+Membuat program dan sistem yang dapat diteruskan
+oleh kepengurusan OSIS berikutnya.
+
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROGRAM ================= -->
+
+<section id="program" class="page">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>Program Unggulan</small>
+
+<h2>
+3 Program. Fokus. Realistis.
+</h2>
+
+<p>
+Kami sengaja tidak membawa terlalu banyak program.
+Kami ingin fokus pada beberapa hal yang benar-benar
+bisa dijalankan dan dirasakan manfaatnya.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- PROGRAM 1 -->
+
+<div class="card program-card">
+
+<span class="program-number">
+01
+</span>
+
+<h3>
+SUARA KITA
+</h3>
+
+<div class="subtitle">
+“Didengar, bukan sekadar dikumpulkan.”
+</div>
+
+<p>
+Ruang bagi siswa untuk menyampaikan aspirasi,
+ide, kritik, saran, dan kebutuhan.
+</p>
+
+<details>
+
+<summary>
+Bagaimana cara kerjanya?
+</summary>
+
+<p>
+Siswa dapat menyampaikan aspirasi melalui media
+digital sederhana seperti formulir/QR dan juga
+media fisik seperti kotak aspirasi.
+</p>
+
+<p>
+Aspirasi kemudian akan:
+</p>
+
+<p>
+<b>
+Dengar → Pilah → Bahas → Tindak Lanjut
+</b>
+</p>
+
+<p>
+Tidak semua aspirasi pasti bisa langsung diwujudkan.
+Namun setiap aspirasi akan menjadi bahan pertimbangan
+dan akan ditentukan mana yang memungkinkan untuk
+ditindaklanjuti bersama pihak terkait.
+</p>
+
+</details>
+
+</div>
+
+
+<!-- PROGRAM 2 -->
+
+<div class="card program-card">
+
+<span class="program-number">
+02
+</span>
+
+<h3>
+FM2 TALENT SPACE
+</h3>
+
+<div class="subtitle">
+“Setiap siswa punya sesuatu yang bisa dibanggakan.”
+</div>
+
+<p>
+Wadah untuk menampilkan bakat, karya, kemampuan,
+dan kreativitas siswa.
+</p>
+
+<details>
+
+<summary>
+Bagaimana cara kerjanya?
+</summary>
+
+<p>
+Siswa dapat mengajukan karya atau kemampuan yang
+ingin ditampilkan melalui OSIS.
+</p>
+
+<p>
+Bidangnya bisa beragam:
+musik, olahraga, coding, desain, editing,
+fotografi, public speaking, seni, menulis,
+dan kemampuan lainnya.
+</p>
+
+<p>
+Bentuknya tidak harus selalu acara besar.
+Bisa berupa showcase sederhana, media sosial sekolah,
+pajangan karya, atau kegiatan yang disesuaikan
+dengan kondisi sekolah.
+</p>
+
+</details>
+
+</div>
+
+
+<!-- PROGRAM 3 -->
+
+<div class="card program-card">
+
+<span class="program-number">
+03
+</span>
+
+<h3>
+OSIS OPEN REPORT
+</h3>
+
+<div class="subtitle">
+“Terbuka, evaluatif, dan mau memperbaiki.”
+</div>
+
+<p>
+Mendorong OSIS untuk terbuka mengenai kegiatan
+yang sudah dilakukan dan hasilnya.
+</p>
+
+<details>
+
+<summary>
+Bagaimana cara kerjanya?
+</summary>
+
+<p>
+Setelah kegiatan utama selesai, OSIS akan melakukan
+evaluasi sederhana.
+</p>
+
+<p>
+Empat pertanyaan utama:
+</p>
+
+<p>
+<b>
+Apa yang dilakukan?<br>
+Apa hasilnya?<br>
+Apa yang kurang?<br>
+Apa yang harus diperbaiki?
+</b>
+</p>
+
+<p>
+Laporan tidak harus rumit.
+Yang penting informasi dapat disampaikan dengan
+jelas dan mudah dipahami siswa.
+</p>
+
+</details>
+
+</div>
+
+
+</div>
+
+
+<!-- PROGRAM FLOW -->
+
+<div class="section-title" style="margin-top:70px">
+
+<small>
+Cara Program Kami Bekerja
+</small>
+
+<h2>
+Tidak Berhenti di Ide.
+</h2>
+
+</div>
+
+
+<div class="flow">
+
+<div class="flow-card">
+
+<strong>
+01 — DENGAR
+</strong>
+
+Cari tahu kebutuhan dan aspirasi siswa.
+
+</div>
+
+
+<div class="flow-card">
+
+<strong>
+02 — PILIH
+</strong>
+
+Tentukan hal yang realistis dan prioritas.
+
+</div>
+
+
+<div class="flow-card">
+
+<strong>
+03 — KERJAKAN
+</strong>
+
+Laksanakan bersama sesuai kemampuan.
+
+</div>
+
+
+</div>
+
+
+<div class="vision-box" style="margin-top:25px">
+
+<p>
+
+<strong>
+Prinsip kami:
+</strong>
+
+<br>
+
+Lebih baik memiliki sedikit program yang
+benar-benar terlaksana daripada banyak program
+yang hanya menjadi janji.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CARA KAMI ================= -->
+
+<section id="cara" class="page">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>Cara Kami Bekerja</small>
+
+<h2>
+Problem → Solution → Action → Result
+</h2>
+
+<p>
+Cara berpikir yang kami pelajari dari RPL ingin kami
+gunakan untuk menyelesaikan masalah secara lebih
+terarah.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-item">
+
+<strong>
+PROBLEM
+</strong>
+
+Temukan masalah dan kebutuhan.
+
+</div>
+
+
+<div class="process-item">
+
+<strong>
+SOLUTION
+</strong>
+
+Cari solusi yang realistis.
+
+</div>
+
+
+<div class="process-item">
+
+<strong>
+ACTION
+</strong>
+
+Kerjakan bersama.
+
+</div>
+
+
+<div class="process-item">
+
+<strong>
+RESULT
+</strong>
+
+Evaluasi hasil dan perbaiki.
+
+</div>
+
+</div>
+
+
+<div class="vision-box" style="margin-top:40px">
+
+<p>
+
+Kami berdua berasal dari jurusan RPL.
+Tetapi kami tidak ingin menjadikan RPL sebagai
+alasan untuk merasa lebih hebat dari jurusan lain.
+
+</p>
+
+<br>
+
+<p>
+
+Justru kami ingin membawa cara berpikir yang kami
+pelajari untuk membantu menyelesaikan masalah
+bersama seluruh siswa.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+RPL bukan tentang menjadi paling hebat.
+</h3>
+
+<p style="margin-top:10px">
+
+RPL mengajarkan kami untuk memahami masalah,
+mencari solusi, menjalankan solusi tersebut,
+kemudian melihat hasilnya.
+
+</p>
+
+<p style="margin-top:15px;color:#38bdf8;font-weight:bold">
+
+Problem. Solution. Action. Result.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<section id="script" class="page">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>Script Kampanye</small>
+
+<h2>
+Samuel & Sopran
+</h2>
+
+<p>
+Naskah kampanye lengkap yang sudah disesuaikan
+dengan tiga program utama.
+</p>
+
+</div>
+
+
+<div class="script-intro">
+
+<strong>
+Catatan:
+</strong>
+
+<p>
+Script ini dapat dibawakan bergantian supaya
+penyampaian terasa natural dan tidak seperti
+membaca pidato panjang.
+</p>
+
+</div>
+
+
+<!-- OPENING -->
+
+<div class="script-section">
+
+<h3>
+01 — OPENING
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+Selamat pagi dan salam sejahtera untuk kita semua.
+</p>
+
+<p style="margin-top:10px">
+
+Yang kami hormati Bapak/Ibu guru,
+dan teman-teman yang kami banggakan.
+
+</p>
+
+<p style="margin-top:10px">
+
+Sebelum kami memperkenalkan diri,
+izinkan saya bertanya satu hal.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kalau kalian punya satu hal yang ingin diperbaiki
+di sekolah ini, apa itu?
+
+</p>
+
+<p style="margin-top:10px">
+
+Apakah suara kalian sudah benar-benar didengar?
+
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+
+Karena menurut kami, menjadi pengurus OSIS
+bukan hanya tentang membuat acara.
+
+</p>
+
+<p style="margin-top:10px">
+
+Bukan hanya tentang siapa yang menjadi ketua
+atau wakil ketua.
+
+</p>
+
+<p style="margin-top:10px">
+
+OSIS seharusnya menjadi tempat di mana siswa
+bisa menyampaikan ide, berkembang,
+dan ikut membuat perubahan.
+
+</p>
+
+<p style="margin-top:10px">
+
+Dan karena itulah, hari ini kami berdiri di sini.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- INTRO -->
+
+<div class="script-section">
+
+<h3>
+02 — PERKENALAN
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+Perkenalkan, saya Samuel Jaya S. Sianipar.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+Dan saya Sopran.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL & SOPRAN
+</span>
+
+<p>
+Kami adalah pasangan calon Ketua dan Wakil Ketua
+OSIS SMK Free Methodist 2 periode 2026/2027.
+</p>
+
+<p style="margin-top:10px">
+
+Dan kami membawa satu prinsip:
+
+</p>
+
+<p style="margin-top:10px;color:#38bdf8;font-size:22px;font-weight:bold">
+
+DENGAR. GERAK. BERDAMPAK.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- VISI -->
+
+<div class="script-section">
+
+<h3>
+03 — VISI
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+
+Visi kami adalah mewujudkan OSIS
+SMK Free Methodist 2 sebagai organisasi
+yang dekat dengan siswa, terbuka terhadap aspirasi,
+dan mampu mengubah ide menjadi aksi nyata
+yang bermanfaat bagi seluruh warga sekolah.
+
+</p>
+
+<p style="margin-top:10px">
+
+Bagi kami, siswa harus didengar,
+ide harus digerakkan,
+dan setiap tindakan harus memberikan dampak.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- MISI -->
+
+<div class="script-section">
+
+<h3>
+04 — MISI
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+
+Untuk mewujudkan visi tersebut,
+kami memiliki lima misi.
+
+</p>
+
+<p style="margin-top:10px">
+Pertama, mendengar suara siswa secara terbuka.
+</p>
+
+<p>
+Kedua, mengubah aspirasi menjadi tindakan.
+</p>
+
+<p>
+Ketiga, menciptakan ruang bagi siswa untuk berkembang.
+</p>
+
+<p>
+Keempat, membangun OSIS yang aktif,
+transparan, dan bertanggung jawab.
+</p>
+
+<p>
+Kelima, membangun program yang dapat
+diteruskan oleh kepengurusan berikutnya.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- PROGRAM SCRIPT -->
+
+<div class="script-section">
+
+<h3>
+05 — PROGRAM KAMI
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL — SUARA KITA
+</span>
+
+<p>
+
+Program pertama kami adalah SUARA KITA.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kami ingin menyediakan ruang yang mudah bagi siswa
+untuk menyampaikan ide, kritik, saran,
+maupun kebutuhan mereka.
+
+</p>
+
+<p style="margin-top:10px">
+
+Namun kami tidak ingin aspirasi hanya dikumpulkan.
+
+</p>
+
+<p style="margin-top:10px">
+
+Aspirasi akan didengar, dipilah, dibahas,
+dan sebisa mungkin ditindaklanjuti.
+
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN — FM2 TALENT SPACE
+</span>
+
+<p>
+
+Program kedua adalah FM2 TALENT SPACE.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kami percaya setiap siswa memiliki kemampuan
+yang mungkin belum terlihat.
+
+</p>
+
+<p style="margin-top:10px">
+
+Ada yang hebat dalam musik, olahraga, coding,
+desain, editing, fotografi, public speaking,
+seni, menulis, dan banyak hal lainnya.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kami ingin memberikan ruang agar potensi tersebut
+bisa terlihat dan diapresiasi.
+
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL — OSIS OPEN REPORT
+</span>
+
+<p>
+
+Program ketiga adalah OSIS OPEN REPORT.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kami ingin membangun OSIS yang terbuka
+dan bisa dipercaya.
+
+</p>
+
+<p style="margin-top:10px">
+
+Setelah kegiatan utama, kami ingin mengevaluasi:
+apa yang dilakukan, apa hasilnya,
+apa yang kurang, dan apa yang harus diperbaiki.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kami tidak harus selalu benar.
+
+Tetapi kami harus mau menerima kritik
+dan memperbaiki diri.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- RPL -->
+
+<div class="script-section">
+
+<h3>
+06 — IDENTITAS RPL
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+
+Kami berdua berasal dari jurusan RPL.
+
+Tapi kami tidak ingin menjadikan RPL
+sebagai alasan untuk merasa lebih hebat
+dari jurusan lain.
+
+</p>
+
+<p style="margin-top:10px">
+
+Justru kami ingin membawa cara berpikir
+yang kami pelajari.
+
+</p>
+
+<p style="margin-top:10px">
+
+Di RPL, ketika ada masalah,
+kita mencari penyebabnya,
+mencari solusi,
+mengerjakannya,
+lalu melihat hasilnya.
+
+</p>
+
+<p style="margin-top:10px;color:#38bdf8;font-size:21px;font-weight:bold">
+
+Problem. Solution. Action. Result.
+
+</p>
+
+<p style="margin-top:10px">
+
+Cara berpikir itulah yang ingin kami bawa
+ke dalam OSIS untuk bekerja bersama
+seluruh siswa.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- WHY US -->
+
+<div class="script-section">
+
+<h3>
+07 — KENAPA KAMI?
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+
+Teman-teman, kami tidak akan mengatakan
+bahwa kami adalah pasangan yang paling hebat.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kami juga tidak ingin menjanjikan
+semuanya akan sempurna.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kami datang membawa kemauan untuk
+mendengar, bekerja, dan memperbaiki.
+
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+
+Kami percaya OSIS bukan milik ketua
+dan wakil ketua.
+
+</p>
+
+<p style="margin-top:10px">
+
+OSIS adalah wadah seluruh siswa.
+
+</p>
+
+<p style="margin-top:10px">
+
+Karena itu, suara kalian harus menjadi
+bagian dari setiap langkah yang kami ambil.
+
+</p>
+
+<p style="margin-top:10px">
+
+Kami mungkin masih belajar menjadi pemimpin,
+tetapi kami siap belajar sambil bekerja
+bersama kalian.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- COMMITMENT -->
+
+<div class="script-section">
+
+<h3>
+08 — KOMITMEN
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+Kami tidak menjanjikan terlalu banyak hal.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+Kami ingin fokus pada hal-hal
+yang benar-benar bisa dilakukan.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+Karena lebih baik memiliki sedikit program...
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+...tetapi benar-benar terlaksana
+dan dirasakan manfaatnya.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL & SOPRAN
+</span>
+
+<p style="font-size:22px;font-weight:bold;color:#38bdf8">
+
+Bukan sekadar program,
+tapi perubahan yang terasa.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CLOSING -->
+
+<div class="script-section">
+
+<h3>
+09 — CLOSING
+</h3>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+Satu suara mungkin terdengar kecil.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+Satu langkah mungkin terlihat sederhana.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+Tapi ketika seluruh siswa bergerak bersama...
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+...kita bisa menciptakan sesuatu yang lebih besar.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+Jadi hari ini, kami tidak hanya meminta
+kalian memilih kami.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+Kami mengajak kalian untuk ikut menjadi
+bagian dari perubahan.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL
+</span>
+
+<p>
+Dengar suara kalian.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SOPRAN
+</span>
+
+<p>
+Gerakkan ide kalian.
+</p>
+
+</div>
+
+
+<div class="dialogue">
+
+<span class="speaker">
+SAMUEL & SOPRAN
+</span>
+
+<p style="font-size:25px;font-weight:bold;color:#38bdf8">
+
+Dan bersama-sama,
+BERIKAN DAMPAK UNTUK FM2!
+
+</p>
+
+<p style="margin-top:15px;font-size:25px;font-weight:bold">
+
+DENGAR. GERAK. BERDAMPAK.
+
+</p>
+
+<p style="margin-top:15px">
+
+Terima kasih.
+Tuhan memberkati.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+<strong>SAMUEL & SOPRAN</strong>
+</p>
+
+<p>
+Calon Ketua & Wakil Ketua OSIS
+SMK Free Methodist 2 • 2026/2027
+</p>
+
+<p style="margin-top:8px">
+DENGAR. GERAK. BERDAMPAK.
+</p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function showPage(pageId, clickedButton){
+
+    /* Sembunyikan semua halaman */
+
+    const pages=document.querySelectorAll(".page");
+
+    pages.forEach(function(page){
+        page.classList.remove("active");
+    });
+
+
+    /* Tampilkan halaman yang dipilih */
+
+    const selectedPage=document.getElementById(pageId);
+
+    if(selectedPage){
+        selectedPage.classList.add("active");
+    }
+
+
+    /* Hilangkan status aktif dari menu */
+
+    const buttons=document.querySelectorAll(".menu button");
+
+    buttons.forEach(function(button){
+        button.classList.remove("active");
+    });
+
+
+    /* Aktifkan menu yang dipilih */
+
+    if(clickedButton){
+        clickedButton.classList.add("active");
+    }
+
+
+    /* Kembali ke atas */
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
